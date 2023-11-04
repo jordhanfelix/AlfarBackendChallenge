@@ -4,17 +4,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:8937",
-      "sslPort": 44364
+      "applicationUrl": "http://localhost:23184",
+      "sslPort": 44337
     }
   },
   "profiles": {
-    "alfar_challenge": {
+    "AlfarBackEndChallenge.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7264;http://localhost:5279",
+      "applicationUrl": "https://localhost:7017;http://localhost:5266",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
