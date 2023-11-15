@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AlfarBackEndChallenge.Application\AlfarBackEndChallenge.Application.csproj" />
+    <ProjectReference Include="..\AlfarBackEndChallenge.Infrastructure.SqlServer\AlfarBackEndChallenge.Infrastructure.SqlServer.csproj" />
+    <ProjectReference Include="..\AlfarBackEndChallenge.Infrastructure\AlfarBackEndChallenge.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
