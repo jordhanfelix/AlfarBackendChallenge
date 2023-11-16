@@ -16,11 +16,6 @@ namespace AlfarBackEndChallenge.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<T> GetByCodeAsync(Guid code)
-        {
-            return await _dbContext.Set<T>().FindAsync(code);
-        }
-
         public IQueryable<T> GetAll()
         {
             return _dbContext.Set<T>().AsQueryable();
