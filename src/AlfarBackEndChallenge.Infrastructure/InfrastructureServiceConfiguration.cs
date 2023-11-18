@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -16,7 +17,7 @@ namespace AlfarBackEndChallenge.Infrastructure
         private const string API_SETTINGS = "Settings";
 
         public static IServiceCollection AddInfrastructureServicesConfiguration(this IServiceCollection services, IConfiguration configuration)
-        {
+        {      
             Settings apiSettings = new Settings();
             new ConfigureFromConfigurationOptions<Settings>(configuration.GetSection(API_SETTINGS)).Configure(apiSettings);
             services.AddSingleton(apiSettings);
@@ -27,7 +28,7 @@ namespace AlfarBackEndChallenge.Infrastructure
             services.AddDbContext<ApplicationDbContext>(options => _ = provider switch
             {
                 "SqlServer" => options.UseSqlServer(
-                    configuration.GetConnectionString(apiSettings.ConnectionStrings),
+                    configuration.GetConnectionString("DefaultConnection"),
                     b =>
                     {
                         b.MigrationsAssembly(migrationAssembly);
